@@ -8,7 +8,8 @@ int main()
 	// Dateizeiger
 	ofstream speichern;  // output >> immer aus der Sicht des C++ Programmes >> Vom Programm in die Datei 
 	ifstream einlesen;   // input >> immer aus der Sicht des C++ Programmes >> eine Datei einlesen in das Programm
-	
+	// fstream lesenSpeichern; // in- und output >> am Anfang nicht zu empfehlen, da du ja die verschiedenen Richtungen lernen sollst. 
+
 	// Daten
 	char zeichen = 'A';
 	int anzahl = 42;
@@ -36,7 +37,7 @@ int main()
 
 		// WERT einlesen in eine andere Variable
 		// char 
-		char z = zwischenspeicher.at(0);
+		char z = zwischenspeicher[0];
 		cout << z << endl;
 
 		// int
@@ -46,7 +47,7 @@ int main()
 
 		// cstring
 		getline(einlesen, zwischenspeicher, '\n');
-		char cstr[sizeof(zwischenspeicher)] = { 0 };
+		char cstr[6] = { 0 }; // Die Groesse des cstrings muss bekannt sein.
 		strcpy_s(cstr, zwischenspeicher.c_str());
 		cout << cstr << endl;
 

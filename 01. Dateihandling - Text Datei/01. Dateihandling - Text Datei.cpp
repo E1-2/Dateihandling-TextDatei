@@ -5,19 +5,19 @@ using namespace std;
 
 int main()
 {
-	// Dateizeiger
+// Dateizeiger
 	ofstream speichern;  // output >> immer aus der Sicht des C++ Programmes >> Vom Programm in die Datei 
 	ifstream einlesen;   // input >> immer aus der Sicht des C++ Programmes >> eine Datei einlesen in das Programm
 	// fstream lesenSpeichern; // in- und output >> am Anfang nicht zu empfehlen, da du ja die verschiedenen Richtungen lernen sollst. 
 
-	// Daten
+// Daten
 	char zeichen = 'A';
 	int anzahl = 42;
 	char cstring[6] = "Hallo";
 	string zeichenkette = "Welt";
 	double preis = 999.99;
 	
-	// Speichern in die Datei
+// Speichern in die Datei
 	speichern.open("Text.txt", ios::out);  
 	if (!speichern.good()) { 
 		cout << "Datei defekt!" << endl; 
@@ -26,7 +26,7 @@ int main()
 	speichern << zeichen << '\t' << anzahl << '\t' << cstring << '\n' << zeichenkette << '\t' << preis;
 	speichern.close();
 
-	// Lesen aus einer Datei
+// Lesen aus einer Datei
 	string zwischenspeicher;
 	einlesen.open("Text.txt", ios::in);
 	
@@ -61,8 +61,8 @@ int main()
 		double p = stod(zwischenspeicher);
 		cout << p << endl;
 	}
-
 	einlesen.close();
+	
 	return 0;
 }
 

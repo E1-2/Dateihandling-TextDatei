@@ -6,9 +6,13 @@ using namespace std;
 int main()
 {
 // Dateizeiger
-	ofstream speichern;  // output >> immer aus der Sicht des C++ Programmes >> Vom Programm in die Datei 
-	ifstream einlesen;   // input >> immer aus der Sicht des C++ Programmes >> eine Datei einlesen in das Programm
-	// fstream lesenSpeichern; // in- und output >> am Anfang nicht zu empfehlen, da du ja die verschiedenen Richtungen lernen sollst. 
+	ofstream speichern;  
+	// output >> immer aus der Sicht des C++ Programmes >> Vom Programm in die Datei 
+	ifstream einlesen;   
+	// input >> immer aus der Sicht des C++ Programmes >> eine Datei einlesen in das Programm
+	fstream lesenSpeichern; 
+	// in- und output >> am Anfang nicht zu empfehlen, 
+	// da du ja die verschiedenen Richtungen lernen sollst. 
 
 // Daten
 	char zeichen = 'A';

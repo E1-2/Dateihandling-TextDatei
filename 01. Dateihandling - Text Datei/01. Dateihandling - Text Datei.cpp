@@ -23,9 +23,12 @@ int main()
 	
 // Speichern in die Datei
 	speichern.open("Text.txt", ios::out);  
-	if (!speichern.good()) { 
-		cout << "Datei defekt!" << endl; 
+	if (!speichern.good()) {
+		cout << "Datei defekt!" << endl;
 	}
+	else
+		cout << "Datei zum Speichern geoeffnet" << endl;
+
 	cout <<  zeichen << '\t' << anzahl << '\t' << cstring << '\n' << zeichenkette << '\t' << preis << endl;
 	speichern << zeichen << '\t' << anzahl << '\t' << cstring << '\n' << zeichenkette << '\t' << preis;
 	speichern.close();

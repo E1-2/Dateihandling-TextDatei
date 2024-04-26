@@ -6,11 +6,11 @@ using namespace std;
 int main()
 {
 // Dateizeiger
-	ofstream speichern;  
+	ofstream dateiZeigerZumSpeichern;  
 	// output >> immer aus der Sicht des C++ Programmes >> Vom Programm in die Datei 
-	ifstream einlesen;   
+	ifstream dateiZeigerZumEinlesen;   
 	// input >> immer aus der Sicht des C++ Programmes >> eine Datei einlesen in das Programm
-	fstream lesenSpeichern; 
+	fstream dateiZeigerFlexibel; 
 	// in- und output >> am Anfang nicht zu empfehlen, 
 	// da du ja die verschiedenen Richtungen lernen sollst. 
 
@@ -22,20 +22,20 @@ int main()
 	double preis = 999.99;
 	
 // Speichern in die Datei
-	speichern.open("Text.txt", ios::out);  
-	if (!speichern.good()) { 
+	dateiZeigerZumSpeichern.open("Text.txt", ios::out);
+	if (!dateiZeigerZumSpeichern.good()) {
 		cout << "Datei defekt!" << endl; 
 	}
 	cout <<  zeichen << '\t' << anzahl << '\t' << cstring << '\n' << zeichenkette << '\t' << preis << endl;
-	speichern << zeichen << '\t' << anzahl << '\t' << cstring << '\n' << zeichenkette << '\t' << preis;
-	speichern.close();
+	dateiZeigerZumSpeichern << zeichen << '\t' << anzahl << '\t' << cstring << '\n' << zeichenkette << '\t' << preis;
+	dateiZeigerZumSpeichern.close();
 
 // Lesen aus einer Datei
 	string zwischenspeicher;
-	einlesen.open("Text.txt", ios::in);
+	dateiZeigerZumEinlesen.open("Text.txt", ios::in);
 	
-	while (!einlesen.eof()) {
-		getline(einlesen, zwischenspeicher, '\t');
+	while (!dateiZeigerZumEinlesen.eof()) {
+		getline(dateiZeigerZumEinlesen, zwischenspeicher, '\t');
 		// alles Ausgeben >> eher selten
 		//cout << zwischenspeicher << endl;
 
@@ -45,27 +45,27 @@ int main()
 		cout << z << endl;
 
 		// int
-		getline(einlesen, zwischenspeicher, '\t');
+		getline(dateiZeigerZumEinlesen, zwischenspeicher, '\t');
 		int a = stoi(zwischenspeicher);
 		cout << a << endl;
 
 		// cstring
-		getline(einlesen, zwischenspeicher, '\n');
+		getline(dateiZeigerZumEinlesen, zwischenspeicher, '\n');
 		char cstr[6] = { 0 }; // Die Groesse des cstrings muss bekannt sein.
 		strcpy_s(cstr, zwischenspeicher.c_str());
 		cout << cstr << endl;
 
 		//string
-		getline(einlesen, zwischenspeicher, '\t');
+		getline(dateiZeigerZumEinlesen, zwischenspeicher, '\t');
 		string zk = zwischenspeicher;
 		cout << zk << endl;
 
 		// double
-		getline(einlesen, zwischenspeicher);
+		getline(dateiZeigerZumEinlesen, zwischenspeicher);
 		double p = stod(zwischenspeicher);
 		cout << p << endl;
 	}
-	einlesen.close();
+	dateiZeigerZumEinlesen.close();
 	
 	return 0;
 }

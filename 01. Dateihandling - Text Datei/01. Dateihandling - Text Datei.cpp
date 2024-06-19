@@ -23,7 +23,7 @@ int main()
 	
 // Speichern in die Datei
 	dateiZeigerZumSpeichern.open("Text.txt", ios::out);
-	if (!dateiZeigerZumSpeichern.good()) {
+	if (!dateiZeigerZumSpeichern.is_open()) {
 		cout << "Datei defekt!" << endl; 
 	}
 	cout <<  zeichen << '\t' << anzahl << '\t' << cstring << '\n' << zeichenkette << '\t' << preis << endl;
